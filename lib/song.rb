@@ -16,9 +16,8 @@ class Song
   end
 
   def self.create_by_name (name)
-    song = self.new
+    song = self.create
     song.name = name
-    song.save
     song
   end
 
@@ -51,10 +50,9 @@ class Song
     file = file.split(" - ")
     artist = file[0]
     name = file[1].split(".")[0]
-    song = self.new
+    song = self.create
     song.name = name
     song.artist_name = artist
-    song.save
     song
   end
 
